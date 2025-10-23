@@ -1,0 +1,195 @@
+.pattern-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.pattern-modal {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 90%;
+  animation: slideUp 0.3s ease-out;
+  overflow: hidden;
+}
+
+.pattern-modal-header {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.pattern-modal-header.win {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.pattern-modal-header.gameOver {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+.pattern-modal-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.pattern-modal-content {
+  padding: 20px;
+}
+
+.win-message,
+.game-over-message {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.win-message p,
+.game-over-message p {
+  margin: 8px 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.win-message p:first-child,
+.game-over-message p:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.final-stats {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.final-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.final-stat:last-child {
+  border-bottom: none;
+}
+
+.final-stat .stat-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.final-stat .stat-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.pattern-modal-actions {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.modal-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.modal-button.new-game {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.modal-button.continue {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.modal-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .pattern-modal {
+    max-width: 350px;
+  }
+
+  .pattern-modal-header {
+    padding: 15px;
+  }
+
+  .pattern-modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .pattern-modal-content {
+    padding: 15px;
+  }
+
+  .final-stats {
+    padding: 12px;
+  }
+
+  .final-stat {
+    padding: 6px 0;
+  }
+
+  .final-stat .stat-label {
+    font-size: 12px;
+  }
+
+  .final-stat .stat-value {
+    font-size: 14px;
+  }
+
+  .pattern-modal-actions {
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .modal-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,130 @@
+.pattern-board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pattern-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  background-color: #bbada0;
+  border-radius: 10px;
+  padding: 10px;
+  width: 350px;
+  height: 350px;
+  position: relative;
+}
+
+.pattern-tile {
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+.pattern-tile.disabled {
+  background-color: #cdc1b4 !important;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pattern-tile.has-value {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pattern-tile.new-tile {
+  animation: tileAppear 0.2s ease-in-out;
+}
+
+.pattern-tile.merged-tile {
+  animation: tileMerge 0.2s ease-in-out;
+}
+
+.board-legend {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.legend-color.active {
+  background-color: rgba(238, 228, 218, 0.8);
+}
+
+.legend-color.disabled {
+  background-color: #cdc1b4;
+  opacity: 0.5;
+}
+
+/* 타일 애니메이션 */
+@keyframes tileAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tileMerge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .pattern-board {
+    width: 280px;
+    height: 280px;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .pattern-tile {
+    font-size: 14px;
+  }
+
+  .board-legend {
+    gap: 15px;
+  }
+
+  .legend-item {
+    font-size: 12px;
+  }
+
+  .legend-color {
+    width: 12px;
+    height: 12px;
+  }
+}

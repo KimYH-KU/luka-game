@@ -1,0 +1,99 @@
+.pattern-2048-game {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #faf8ef;
+  min-height: 100vh;
+  outline: none;
+}
+
+.pattern-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pattern-header h1 {
+  color: #776e65;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.phase-indicator {
+  margin-bottom: 20px;
+}
+
+.phase-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+.phase-badge.nonogram {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.phase-badge.game2048 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.phase-description {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.phase-description p {
+  margin: 8px 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+.phase-description p:first-child {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+.nonogram-phase,
+.game2048-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .pattern-2048-game {
+    padding: 15px;
+  }
+
+  .pattern-header h1 {
+    font-size: 2rem;
+  }
+
+  .phase-description {
+    padding: 15px;
+  }
+
+  .phase-description p {
+    font-size: 14px;
+  }
+}

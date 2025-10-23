@@ -1,0 +1,130 @@
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.game-title {
+  font-size: 80px;
+  font-weight: bold;
+  color: #776e65;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scores {
+  display: flex;
+  gap: 10px;
+}
+
+.score-box {
+  background-color: #bbada0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  min-width: 80px;
+  color: white;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.score-value {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-description {
+  flex: 1;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.game-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-button {
+  background-color: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.control-button:hover {
+  background-color: #9f8a76;
+  transform: translateY(-1px);
+}
+
+.control-button:active {
+  transform: translateY(0);
+}
+
+.control-button.disabled {
+  background-color: #cdc1b4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.new-game-button {
+  background-color: #ed702d;
+}
+
+.new-game-button:hover {
+  background-color: #ff7d3d;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 60px;
+  }
+
+  .header-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .game-description {
+    text-align: center;
+  }
+
+  .score-box {
+    min-width: 70px;
+    padding: 8px 15px;
+  }
+
+  .score-value {
+    font-size: 20px;
+  }
+}

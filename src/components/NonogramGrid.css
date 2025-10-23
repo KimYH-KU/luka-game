@@ -1,0 +1,186 @@
+.nonogram-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.col-clues {
+  display: flex;
+  gap: 2px;
+  margin-left: 120px; /* 행 힌트 공간만큼 여백 */
+}
+
+.col-clue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30px;
+  min-height: 60px;
+  gap: 2px;
+}
+
+.grid-area {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.row-clues {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 110px;
+}
+
+.row-clue {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 30px;
+  gap: 4px;
+  padding-right: 8px;
+}
+
+.clue-number {
+  font-size: 14px;
+  font-weight: bold;
+  color: #495057;
+  min-width: 20px;
+  text-align: center;
+}
+
+.nonogram-grid {
+  display: grid;
+  gap: 2px;
+  background-color: #343a40;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.nonogram-cell {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.nonogram-cell:hover {
+  background-color: #e9ecef;
+  transform: scale(1.05);
+}
+
+.nonogram-cell.filled {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.nonogram-cell.filled:hover {
+  background-color: #495057;
+}
+
+.nonogram-cell.marked {
+  background-color: #ffffff;
+  color: #dc3545;
+}
+
+.nonogram-cell.marked:hover {
+  background-color: #f8d7da;
+}
+
+.nonogram-cell.mistake {
+  background-color: #f5c6cb !important;
+  border-color: #dc3545 !important;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+/* 5x5 그리드를 위한 더 큰 셀 */
+.nonogram-grid[style*='repeat(5'] .nonogram-cell {
+  width: 35px;
+  height: 35px;
+}
+
+/* 7x7 이상 그리드를 위한 작은 셀 */
+.nonogram-grid[style*='repeat(7'] .nonogram-cell,
+.nonogram-grid[style*='repeat(8'] .nonogram-cell,
+.nonogram-grid[style*='repeat(9'] .nonogram-cell,
+.nonogram-grid[style*='repeat(10'] .nonogram-cell {
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .nonogram-container {
+    padding: 15px;
+  }
+
+  .col-clues {
+    margin-left: 80px;
+  }
+
+  .col-clue {
+    width: 25px;
+    min-height: 50px;
+  }
+
+  .row-clues {
+    width: 70px;
+  }
+
+  .row-clue {
+    height: 25px;
+  }
+
+  .clue-number {
+    font-size: 12px;
+    min-width: 16px;
+  }
+
+  .nonogram-cell {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+
+  .nonogram-grid[style*='repeat(5'] .nonogram-cell {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nonogram-grid[style*='repeat(7'] .nonogram-cell,
+  .nonogram-grid[style*='repeat(8'] .nonogram-cell,
+  .nonogram-grid[style*='repeat(9'] .nonogram-cell,
+  .nonogram-grid[style*='repeat(10'] .nonogram-cell {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+}

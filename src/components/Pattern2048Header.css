@@ -1,0 +1,164 @@
+.pattern-header-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.pattern-game-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pattern-game-title {
+  margin: 0 0 8px 0;
+  color: #776e65;
+  font-size: 1.8rem;
+}
+
+.pattern-game-goal {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.pattern-game-goal strong {
+  color: #667eea;
+  font-weight: bold;
+}
+
+.pattern-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.stat-box.score {
+  border-color: #667eea;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%
+  );
+}
+
+.stat-box.best {
+  border-color: #28a745;
+  background: linear-gradient(
+    135deg,
+    rgba(40, 167, 69, 0.1) 0%,
+    rgba(32, 201, 151, 0.1) 100%
+  );
+}
+
+.stat-box.moves {
+  border-color: #ff9800;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 152, 0, 0.1) 0%,
+    rgba(255, 193, 7, 0.1) 100%
+  );
+}
+
+.stat-box.time {
+  border-color: #f44336;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 67, 54, 0.1) 0%,
+    rgba(211, 47, 47, 0.1) 100%
+  );
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.pattern-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.control-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.control-button.new-game {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.control-button.undo {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+}
+
+.control-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.control-button:not(.disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .pattern-header-container {
+    padding: 15px;
+  }
+
+  .pattern-game-title {
+    font-size: 1.5rem;
+  }
+
+  .pattern-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-box {
+    padding: 10px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .control-button {
+    padding: 8px 16px;
+    font-size: 12px;
+    min-width: 80px;
+  }
+}
