@@ -125,6 +125,7 @@ function App() {
                 analysis={aiAnalysis}
                 onAIMove={handleAIMove}
                 isGameActive={isGameActive}
+                board={gameState.board}
               />
             </div>
           </div>

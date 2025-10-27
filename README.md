@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# 🎮 2048 AI Game - Gemini AI 통합
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React + TypeScript로 만든 **3가지 게임이 통합된** 인터랙티브 게임 플랫폼입니다.
+
+## ✨ 주요 기능
+
+### 🎯 3가지 게임 모드
+
+1. **2048 게임** - AI 도우미 기능 포함
+2. **네모네모로직** - 퍼즐 게임
+3. **패턴 보드 2048** - 두 게임의 하이브리드
+
+### 🤖 AI 기능
+
+- **알고리즘 AI**: 미니맥스 알고리즘 기반 (무료)
+- **Gemini AI**: Google Gemini 1.5 Flash 모델 기반 (무료!)
+  - 보드 상태 분석
+  - 최적의 수 추천
+  - 전략적 조언 제공
+  - **완전 무료** (일일 1,500회 요청)
+
+## 🚀 시작하기
+
+### 설치
+
+```bash
+npm install
+```
+
+### Gemini AI 설정 (선택사항, 무료!)
+
+1. [Google AI Studio](https://aistudio.google.com/app/apikey)에서 API 키 발급
+2. 프로젝트 루트에 `.env` 파일 생성
+3. 다음 내용 추가:
+
+```env
+REACT_APP_GEMINI_API_KEY=your_api_key_here
+```
 
 ## Available Scripts
 
@@ -39,8 +74,26 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## 🎮 게임 소개
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. 2048 게임
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+클래식 2048 게임에 AI 도우미 기능이 추가되었습니다.
+
+**기능:**
+
+- 4x4 그리드
+- 키보드 조작 (화살표 키, WASD)
+- 실행 취소 기능
+- 실시간 AI 분석 및 추천
+- Gemini AI 통합 (무료!)
+
+### 2. 네모네모로직
+
+숫자 힌트를 보고 그림을 완성하는 퍼즐 게임입니다.
+
+### 3. 패턴 보드 2048
+
+네모네모로직과 2048을 결합한 독특한 게임입니다.
+
+Made with ❤️ using React + TypeScript + Google Gemini AI
