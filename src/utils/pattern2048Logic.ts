@@ -5,7 +5,7 @@ import {
 } from '../types/pattern2048';
 
 export const PATTERN_BOARD_SIZE = 5;
-export const WIN_TILE_PATTERN = 128;
+export const WIN_TILE_PATTERN = 2048;
 
 // 패턴 모양에 따른 빈 보드 생성
 export const createPatternBoard = (shape: PatternBoardShape): PatternBoard => {
